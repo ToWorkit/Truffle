@@ -42,8 +42,8 @@ contract Person {
     return _age;
   }
 
-  // 销毁合约, constant 调用时不写入数据也可以加上constant
-  function kill() constant{
+  // 销毁合约
+  function kill() {
     if (_owner == msg.sender) {
       // 析构函数
       selfdestruct(msg.sender)
