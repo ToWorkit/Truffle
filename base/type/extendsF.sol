@@ -2,6 +2,7 @@ pragma solidity ^0.4.4;
 
 // 声明合约
 contract Animal {
+  // 属性
   uint _weight;
   uint private _height;
   uint internal _age;
@@ -38,16 +39,16 @@ contract Animal_1 {
 // 声明合约
 contract Dog is Animal, Animal_1 {
   // 只有public类型的方法才会被继承
-  // 可以继承public和internal类型的属性
 
+  // 只可以继承public和internal类型的属性
   // 属性操作
   function testWeight() public view returns(uint) {
     return _weight;
   }
 
-  function testHeight() public view returns(uint) {
+  /* function testHeight() public view returns(uint) {
     return _height;
-  }
+  } */
 
   function testAge() public view returns(uint) {
     return _age;
@@ -55,5 +56,10 @@ contract Dog is Animal, Animal_1 {
 
   function testMoney() public view returns(uint) {
     return _money;
+  }
+
+  // 重写 使用Dog合约时，优先级最高
+  function sex() public view returns(uint) {
+    return 1;
   }
 }

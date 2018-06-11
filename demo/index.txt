@@ -1,0 +1,21 @@
+创建一个react truffle项目
+	truffle unbox react
+
+
+shell
+	truffle develop
+编译
+	compile
+部署
+	migrate
+	
+	
+查看代币 单位是 位
+	Number(web3.eth.getBalance("0x627306090abab3a6e1400e9345bc60c78a8bef57"));
+		100000000000000000000
+转为位
+	acount = web3.toWei(30,'ether');
+		'30000000000000000000'
+转账 会有gas的消费
+	web3.eth.sendTransaction({from: "0x627306090abab3a6e1400e9345bc60c78a8bef57", to:"0x8E614c62f481b28f0F59ffE3D20f8FA65B5a8C1e", value: acount});
+		'0x8cf779f428ad4263a1253538c226eb5b363d3c810cb1d730fe74f244f4ad1143'
